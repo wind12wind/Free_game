@@ -6,9 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public Inventory inventory;
-    public GameObject inventoryUI;
-    private bool isInventoryOpen = false;
+    public Inventory inventory; 
 
     void Awake()
     {
@@ -21,20 +19,19 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject); 
         }
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
 
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
         inventory = FindObjectOfType<Inventory>();
     }
-    public class Item
-    {
-        public string itemName;
-        public int itemID;
-        public Sprite itemIcon;
-    }
 
-        public void ToggleInventory()
+    public void ToggleInventory()
     {
-        isInventoryOpen = !isInventoryOpen;
-        inventoryUI.SetActive(isInventoryOpen);
-        Debug.Log("Inventory toggled: " + isInventoryOpen);
+        if (inventory != null)
+        {
+            inventory.ToggleInventory();
+        }
     }
 }

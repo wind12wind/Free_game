@@ -5,12 +5,10 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 5.0f;
     public GameObject inventoryUI;
     private Rigidbody2D rb;
-    private bool isInventoryOpen = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        inventoryUI.SetActive(false);
     }
 
     void Update()
