@@ -278,7 +278,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterPrefabs:
   - {fileID: 7685621428539676284, guid: 8433786f31f239e45b7045a9f9ee048c, type: 3}
-  spawnInterval: 1
+  - {fileID: 7685621428539676284, guid: dd867ad94bd5bcc4e94ce9b9ab2101c7, type: 3}
+  - {fileID: 7685621428539676284, guid: 61ac5215e807ac84e8f52e1f652dfa10, type: 3}
+  spawnInterval: 0.5
   poolSize: 10
 --- !u!4 &867558935
 Transform:
