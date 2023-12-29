@@ -60,8 +60,9 @@ public class SpawnManager : MonoBehaviour
     Vector3 CalculateSpawnPosition()
     {
         Camera mainCamera = Camera.main;
+        float randomX = Random.Range(0.4f, 0.6f);
         Vector3 spawnPosition = mainCamera.ViewportToWorldPoint(new Vector3(Random.Range(0f, 1f), 1, mainCamera.nearClipPlane));
-        spawnPosition.z = -10; // 2D 게임인 경우 Z 좌표 조정
+        spawnPosition.z = 0; 
         return spawnPosition;
     }
 }
