@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-
     public GameObject[] monsterPrefabs; // 몬스터 프리팹 배열
     public float spawnInterval = 2.0f; // 스폰 간격
     public int poolSize = 10;
@@ -60,9 +59,9 @@ public class SpawnManager : MonoBehaviour
     Vector3 CalculateSpawnPosition()
     {
         Camera mainCamera = Camera.main;
-        float randomX = Random.Range(0.4f, 0.6f);
-        Vector3 spawnPosition = mainCamera.ViewportToWorldPoint(new Vector3(Random.Range(0f, 1f), 1, mainCamera.nearClipPlane));
-        spawnPosition.z = 0; 
+        float randomX = Random.Range(0.4f, 0.6f); // X축 랜덤 위치 지정
+        Vector3 spawnPosition = mainCamera.ViewportToWorldPoint(new Vector3(randomX, 1, mainCamera.nearClipPlane));
+        spawnPosition.z = 0;
         return spawnPosition;
     }
 }
